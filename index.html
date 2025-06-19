@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login to Home</title>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      #home-page { display: none; }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      input, button {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- 🔐 Login Form -->
+      <div id="login-section">
+        <h2>Login Page</h2>
+        <form onsubmit="return validateLogin()">
+          <label>Email:</label>
+          <input type="text" id="username" placeholder="Enter your email" required />
+          <label>Password:</label>
+          <input type="password" id="password" placeholder="Enter your password" required />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <!-- 🏠 Home Page (Hidden Initially) -->
+      <div id="home-page">
+        <div
+          class="tenor-gif-embed"
+          data-postid="253027946666209433"
+          data-share-method="host"
+          data-aspect-ratio="1.37853"
+          data-width="100%"
+        >
+          <a href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433">Mochi Cat GIF</a>
+          from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <h1>Hehehehe, I knew it! Love you a lot 😘</h1>
+      </div>
+
+    </div>
+
+    <script>
+      function validateLogin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "1234") {
+          document.getElementById("login-section").style.display = "none";
+          document.getElementById("home-page").style.display = "block";
+        } else {
+          alert("Invalid login. Try admin / 1234");
+        }
+
+        return false; // Prevent form from submitting
+      }
+    </script>
+  </body>
+</html>
